@@ -1,0 +1,3 @@
+const defaults={warnTokens:18000,criticalTokens:28000,warnMessages:120,showFloatingStatus:true,staleHoldDays:10,staleLongHoldDays:30,autoFollowLive:true,autoFollowThresholdPx:220,projectInference:true};
+async function load(){const s=await chrome.storage.local.get(defaults);for(const[k,v]of Object.entries(s)){const e=document.getElementById(k);if(!e)continue;e.type==='checkbox'?e.checked=!!v:e.value=v}}
+document.getElementById('save').onclick=async()=>{const d={};for(const k of Object.keys(defaults)){const e=document.getElementById(k);d[k]=e.type==='checkbox'?e.checked:Number(e.value)}await chrome.storage.local.set(d);document.getElementById('saved').textContent='Saved';setTimeout(()=>document.getElementById('saved').textContent='',1200)};load();
