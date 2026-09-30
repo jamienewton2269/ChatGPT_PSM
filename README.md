@@ -42,6 +42,21 @@ See [PRIVACY.md](PRIVACY.md) for details.
 
 **v0.3.1**
 
+## Quick installer
+
+For Windows users:
+
+1. Download both `install.bat` and `install.ps1` from this repository into the same folder.
+2. Double-click `install.bat`.
+3. The installer downloads the current repository, verifies that `manifest.json` is present, installs the unpacked extension files under your local app-data folder, copies that folder path to the clipboard, and opens the browser extension manager.
+4. Enable **Developer mode**, choose **Load unpacked**, and select the folder shown by the installer.
+
+The installer cannot silently enable the extension because Chrome and Edge deliberately require the user to approve unpacked extensions.
+
+Direct installer files:
+- [install.bat](install.bat)
+- [install.ps1](install.ps1)
+
 ## Install from source
 
 ### Microsoft Edge
